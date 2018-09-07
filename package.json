@@ -1,0 +1,23 @@
+{
+  "name": "minmax-webworker",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "antd": "^3.9.1",
+    "mathjs": "^5.1.1",
+    "plotly.js": "^1.40.1",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "react-plotly.js": "^2.2.0",
+    "react-scripts": "1.1.5"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "workerize-loader": "^1.0.4"
+  }
+}
