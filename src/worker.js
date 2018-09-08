@@ -87,7 +87,24 @@ function main({degree = 3, start = 1, end = 10, precision = 0.001, func = 'sin(x
     xOfMaxError = temp.xOfMaxError;
     maxError = temp.maxError;
   }
-  postMessage(JSON.stringify({alternance, maxError, xOfMaxError, errorOnIteration, coefficients}, null, 2))
+
+  const xRange = math.range(start, end, (end - start) / 100, true)._data
+
+
+  postMessage(JSON.stringify({
+    alternance,
+    maxError,
+    xOfMaxError,
+    errorOnIteration,
+    coefficients,
+    xRange,
+    approximationPlot: {
+      y: xRange.map(x => evaluate(coefficients, x))
+    },
+    functionPlot: {
+      y: math.eval(func, {x: xRange})
+    }
+  }, null, 2))
   // postMessage(JSON.stringify({finished: true}))
   // showIterationInfo({alternance, maxError, xOfMaxError, errorOnIteration, coefficients})
 
